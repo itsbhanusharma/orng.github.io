@@ -6,8 +6,7 @@ body {
 
 /* Header */
 header.page-header {
-  background-image: none !important;   /* removes the gradient */
-  background-color: #FF6F3C !important; /* your orange */
+  background-image: linear-gradient(120deg, #FF6F3C, #FF914D) !important;
   color: #FFFFFF !important;
 }
 
