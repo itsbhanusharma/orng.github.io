@@ -1,3 +1,5 @@
 title: ORNG.co
 description: Making IT Simple
 theme: jekyll-theme-cayman
+include:
+  - assets/css
