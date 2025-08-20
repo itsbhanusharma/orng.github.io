@@ -6,12 +6,13 @@ body {
 
 /* Header */
 header.page-header {
-  background-color: #FF6F3C !important; /* vivid orange */
+  background-image: none !important;   /* removes the gradient */
+  background-color: #FF6F3C !important; /* your orange */
   color: #FFFFFF !important;
 }
 
-/* Header links */
-header.page-header a {
+/* Header */
+header.page-header.project-name a h1 {
   color: #FFFFFF !important;
 }
 
