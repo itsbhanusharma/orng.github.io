@@ -71,20 +71,22 @@ a:hover, .btn:hover {
 }
 
 .site-footer .footer-nav a:hover {
-  color: #FF6600; /* orange hover accent */
+   color: #FF6600; /* orange hover accent */
 }
 
 .site-footer .social-links {
-  margin: 10px 0;
+   margin: 10px 0;
 }
 
 .site-footer .social-links a {
-  display: inline-block;
-  margin: 0 6px;
-  opacity: 0.7;
-  transition: opacity 0.2s ease-in-out;
+   display: inline-block;
+   margin: 0 6px;
+   opacity: 0.7;
+   transition: opacity 0.2s ease-in-out;
+   color: #fff;  /* makes icons white */
 }
 
 .site-footer .social-links a:hover {
-  opacity: 1;
+   opacity: 1;
+   color: #FF6600; /* hover accent */
 }
