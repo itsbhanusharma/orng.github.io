@@ -1,0 +1,28 @@
+:root {
+  /* Core colors */
+  --header-bg-color: #FF6F3C;   /* Orange header */
+  --header-text-color: #FFFFFF; /* White header text */
+  --section-headings-color: #FF6F3C; /* Orange section titles */
+  --link-color: #1E3D59;        /* Navy links */
+  --text-color: #333333;        /* Dark gray body text */
+  --background-color: #FFF8F5;  /* Light peach background */
+}
+
+/* Apply to Cayman elements */
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+header.page-header {
+  background-color: var(--header-bg-color);
+  color: var(--header-text-color);
+}
+
+h1, h2, h3 {
+  color: var(--section-headings-color);
+}
+
+a {
+  color: var(--link-color);
+}
