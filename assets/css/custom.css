@@ -62,6 +62,43 @@ a:hover, .btn:hover {
   color: #CC5200; /* darker accent on hover */
 }
 
+/* Primary button – Orange gradient */
+.btn {
+  display: inline-block;
+  background: linear-gradient(120deg, #FF6F3C, #FF914D); /* orange gradient */
+  color: #ffffff !important;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+  background: #FF6F3C; /* solid orange on hover */
+  transform: translateY(-2px);
+}
+
+/* Secondary button – Navy outline */
+.btn-secondary {
+  display: inline-block;
+  background: transparent;
+  color: #1E3D59 !important; /* navy text */
+  border: 2px solid #1E3D59;
+  padding: 8px 18px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background: #1E3D59; /* navy fill */
+  color: #ffffff !important;
+  transform: translateY(-2px);
+}
+
+
 /* =======================
    Footer (sticky + muted)
    ======================= */
