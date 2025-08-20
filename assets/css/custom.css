@@ -1,35 +1,49 @@
 /* =======================
-   Global Layout
+   Base + Layout
    ======================= */
 html, body {
-  height: 100%;
   margin: 0;
+  padding: 0;
 }
 
 body {
+  /* Sticky footer layout */
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  background-color: #FFFFFF; /* white background */
-  color: #333333;            /* main text */
-  font-family: system-ui, sans-serif;
+
+  /* Colors */
+  background-color: #FFFFFF; /* content background */
+  color: #333333;            /* body text */
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 }
 
+/* The Cayman layout uses <main id="content" class="main-content"> */
 .main-content {
-  flex: 1; /* pushes footer down */
+  flex: 1 0 auto; /* fills remaining space so footer drops to bottom */
 }
 
 /* =======================
-   Header
+   Header (override Cayman gradient)
    ======================= */
-.page-header {
+header.page-header {
+  /* Kill the default green gradient and apply your scheme */
+  background-image: none !important;
   background-color: #1F1F1F !important; /* dark grey */
   color: #EEEEEE !important;
   text-align: center;
   padding: 20px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* subtle separation */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* subtle separation from content */
 }
 
+/* Ensure header text/links remain readable */
+header.page-header .project-name,
+header.page-header .project-tagline,
+header.page-header a {
+  color: #EEEEEE !important;
+}
+
+/* Optional logo sizing */
 .site-logo {
   height: 48px;
   width: auto;
@@ -37,27 +51,29 @@ body {
 }
 
 /* =======================
-   Links & Buttons
+   Links & Buttons (orange accent)
    ======================= */
 a, .btn {
-  color: #FF6600; /* orange accent */
+  color: #FF6600; /* accent */
   text-decoration: none;
 }
 
 a:hover, .btn:hover {
-  color: #CC5200; /* darker orange on hover */
+  color: #CC5200; /* darker accent on hover */
 }
 
 /* =======================
-   Footer (Sticky)
+   Footer (sticky + muted)
    ======================= */
 .site-footer {
+  margin-top: auto;            /* guarantees it sticks to bottom */
+  width: 100%;
   background: #1F1F1F;
   color: #999999;
   text-align: center;
   padding: 20px;
   font-size: 0.9em;
-  border-top: 1px solid #333; /* subtle divider */
+  border-top: 1px solid #333;  /* subtle divider */
 }
 
 .site-footer .footer-nav {
