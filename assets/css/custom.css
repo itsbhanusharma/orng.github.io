@@ -5,19 +5,9 @@ body {
 }
 
 /* Header */
-header.page-header {
+.page-header {
   background-image: linear-gradient(120deg, #FF6F3C, #FF914D) !important;
   color: #FFFFFF !important;
-}
-
-/* Header */
-header.page-header.project-name a h1 {
-  color: #FFFFFF !important;
-}
-
-/* Section headings */
-h1, h2, h3 {
-  color: #FF6F3C;
 }
 
 /* Links & buttons */
