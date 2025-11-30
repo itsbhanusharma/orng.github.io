@@ -21,13 +21,14 @@ body {
 /* The Cayman layout uses <main id="content" class="main-content"> */
 .main-content {
   flex: 1 0 auto; /* fills remaining space so footer drops to bottom */
+   h1, h2, h3, h4, h5, h6 {
+      color: #1e1e24;
+   }
 }
 
-/* =======================
-   Header (override Cayman gradient)
-   ======================= */
+/* Header */
+
 header.page-header {
-  /* Kill the default green gradient and apply your scheme */
   background-image: none !important;
   background-color: #1F1F1F !important; /* dark grey */
   color: #EEEEEE !important;
