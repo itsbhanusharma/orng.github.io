@@ -611,3 +611,12 @@ a:hover{
     -webkit-font-smoothing: antialiased;
   }
 }
+
+/* Force contact grid children to behave like grid items (not centered blocks) */
+.page-contact .contact-grid > .scheduler-card,
+.page-contact .contact-grid > .contact-card{
+  max-width: none !important;
+  margin: 0 !important;
+  justify-self: stretch;
+}
+
