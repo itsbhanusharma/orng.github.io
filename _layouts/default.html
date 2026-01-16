@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="{{ '/assets/css/orng.css' | relative_url }}">
     {% include head-custom.html %}
   </head>
-  <body>
+  <body{% if page.body_class %} class="{{ page.body_class }}"{% endif %}>
     <a id="skip-to-content" href="#content">Skip to the content.</a>
 
     <header class="page-header" role="banner">
