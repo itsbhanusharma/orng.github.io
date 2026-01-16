@@ -317,6 +317,56 @@ a:hover{
   padding: 18px;
 }
 
+/* =========================================================
+   Contact tile polish (email consistency + copy)
+   ========================================================= */
+
+/* Make tile content align like scheduler tile */
+.contact-tile{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Email should look like a "field", not a purple nav link */
+.email-link{
+  display: inline-block;
+  color: rgba(255,255,255,.88) !important;
+  text-decoration: none !important;
+  font-weight: 550;
+  letter-spacing: -0.01em;
+}
+
+.email-link:hover{
+  color: rgba(255,255,255,.92) !important;
+  text-decoration: underline !important;
+  text-underline-offset: 3px;
+}
+
+/* Actions row inside tiles (Copy + status) */
+.tile-actions{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+/* Copy button polish */
+.copy-btn{
+  height: 40px !important;
+  padding: 0 14px !important;
+  border-radius: 12px !important;
+  cursor: pointer;
+}
+
+.copy-btn:active{
+  transform: translateY(0px);
+}
+
+.copy-status{
+  opacity: 0.75;
+}
+
 /* -----------------------
    Focus grid
    ----------------------- */
@@ -504,6 +554,12 @@ a:hover{
   .focus-grid li{
     padding: 12px;
   }
+
+  /* Tile actions stack nicer on very small screens */
+  .tile-actions{
+    flex-wrap: wrap;
+    row-gap: 6px;
+  }
 }
 
 /* iOS text consistency */
@@ -531,8 +587,12 @@ a:hover{
     align-items: stretch;
   }
 
+  /* Ensure both cards match height */
   .contact-grid > .scheduler-card,
   .contact-grid > .contact-card{
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
   }
 }
