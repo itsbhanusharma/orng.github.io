@@ -5,48 +5,62 @@
     <link rel="icon" type="image/x-icon" href="{{ '/assets/favicon/favicon.ico' | relative_url }}">
     <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/favicon/apple-touch-icon.png' | relative_url }}">
     {% seo %}
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" as="style" type="text/css" crossorigin>
+    <!--inter-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!--inter-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#157878">
+    <meta name="theme-color" content="#090A0B">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/orng.css' | relative_url }}">
     {% include head-custom.html %}
   </head>
   <body>
     <a id="skip-to-content" href="#content">Skip to the content.</a>
 
     <header class="page-header" role="banner">
-        <div class="container">
-          <a href="{{ '/' | relative_url }}">
-            <img src="{{ '/assets/logo/orng-full-logo.png' | relative_url }}" alt="{{ site.title }} logo" class="site-logo">
-          </a>
-        </div>
-    </header>
+      <div class="container header-inner">
+        <a href="{{ '/' | relative_url }}" class="brand">
+          <img src="{{ '/assets/logo/orng-full-logo.png' | relative_url }}" alt="{{ site.title }} logo" class="site-logo">
+        </a>
 
-    <main id="content" class="main-content" role="main">
-      {{ content }}
-    </main>
-      <footer class="site-footer">
-        <nav class="footer-nav">
-          <a href="{{ '/' | relative_url }}">Home</a> •
-          <a href="{{ '/about' | relative_url }}">About</a> •
+        <nav class="top-nav" aria-label="Primary">
+          <a href="{{ '/' | relative_url }}">Home</a>
+          <a href="{{ '/about' | relative_url }}">About</a>
           <a href="{{ '/contact' | relative_url }}">Contact</a>
+          <a href="{{ '/book' | relative_url }}">Book</a>
         </nav>
-        <div class="social-links">
-          <a href="https://www.linkedin.com/company/orng-enterprises" target="_blank" aria-label="LinkedIn">
-            <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.039-1.852-3.039-1.853 0-2.136 1.445-2.136 2.939v5.669H9.351V9h3.414v1.561h.049c.476-.9 1.637-1.852 3.369-1.852 3.601 0 4.268 2.37 4.268 5.455v6.288zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zm1.777 13.019H3.559V9h3.555v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.225.792 24 1.771 24h20.451C23.2 24 24 23.225 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/>
-            </svg>
-          </a>
-          <a href="https://x.com/ORNGEnterprises" target="_blank" aria-label="X">
-            <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-              <path d="M18.244 1.986h3.562l-7.782 8.902L24 22.014h-7.406l-5.799-7.539-6.638 7.539H.594l8.334-9.466L0 1.986h7.594l5.243 6.932 5.407-6.932z"/>
-            </svg>
-          </a>
-        </div>
-        <p>© 2014 - {{ site.time | date: "%Y" }} {{ site.title }} • Made with ❤️ in  🇮🇳 </p>
-      </footer>
+      </div>
+    </header>
+    
+    <main id="content" class="main-content" role="main">
+      <div class="container">
+        {{ content }}
+      </div>
+    </main>
+
+    <footer class="site-footer">
+       <nav class="footer-nav">
+         <a href="{{ '/' | relative_url }}">Home</a> •
+         <a href="{{ '/about' | relative_url }}">About</a> •
+         <a href="{{ '/contact' | relative_url }}">Contact</a>
+       </nav>
+       <div class="social-links">
+         <a href="https://www.linkedin.com/company/orng-enterprises" target="_blank" aria-label="LinkedIn">
+           <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+             <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.039-1.852-3.039-1.853 0-2.136 1.445-2.136 2.939v5.669H9.351V9h3.414v1.561h.049c.476-.9 1.637-1.852 3.369-1.852 3.601 0 4.268 2.37 4.268 5.455v6.288zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zm1.777 13.019H3.559V9h3.555v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.225.792 24 1.771 24h20.451C23.2 24 24 23.225 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/>
+           </svg>
+         </a>
+         <a href="https://x.com/ORNGEnterprises" target="_blank" aria-label="X">
+           <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+             <path d="M18.244 1.986h3.562l-7.782 8.902L24 22.014h-7.406l-5.799-7.539-6.638 7.539H.594l8.334-9.466L0 1.986h7.594l5.243 6.932 5.407-6.932z"/>
+           </svg>
+         </a>
+       </div>
+       <p>© 2014 - {{ site.time | date: "%Y" }} {{ site.title }} • Made with ❤️ in  🇮🇳 </p>
+     </footer>
   </body>
 </html>
