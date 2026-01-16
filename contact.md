@@ -7,12 +7,9 @@ title: Contact
 
 # Contact
 
-We’d be happy to discuss how we can work together.  
-Reach us directly using the details below.
+Reach out to discuss priorities, timelines, and the right next steps.
 
 </div>
-
----
 
 ## Email
 
@@ -23,8 +20,6 @@ Reach us directly using the details below.
 **hello[at]orng.co**
 
 </div>
-
----
 
 ## Connect
 
