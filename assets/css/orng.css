@@ -518,3 +518,27 @@ pre code{
 .subtle{
   color: var(--subtle);
 }
+
+/* Tighten Cayman markdown spacing inside cards */
+.card-elevated h1,
+.card h2,
+.card h3 {
+  margin-top: 0 !important;
+}
+
+.card-elevated p {
+  margin-bottom: 0;
+}
+
+.card ul {
+  margin: 10px 0 0;
+}
+
+.card li {
+  margin: 6px 0;
+}
+
+hr {
+  opacity: 0.12;
+}
+

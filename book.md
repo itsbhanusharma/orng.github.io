@@ -4,12 +4,11 @@ title: Book
 permalink: /book
 ---
 
-<div class="card-elevated">
+<div class="card-elevated" markdown="1">
 
 # Book a Call
 
 Pick a time that works for you and I’ll confirm the meeting.
-Fast, simple, and no back-and-forth.
 
 <div class="small" style="margin-top:14px;">
   Typically 15–30 minutes • Remote • India-friendly scheduling
@@ -26,11 +25,11 @@ Fast, simple, and no back-and-forth.
 
 ## What to expect
 
-<div class="card">
+<div class="card" markdown="1">
 
 - Quick understanding of your needs and current setup  
-- Straightforward recommendations (no fluff)  
-- Next steps + optional follow-up plan  
+- Straightforward recommendations
+- Next steps & optional follow-up plan  
 
 </div>
 
@@ -38,14 +37,10 @@ Fast, simple, and no back-and-forth.
 
 ## Scheduler
 
-<div class="card" id="scheduler">
+<div class="card" id="scheduler" markdown="1">
 
 <div class="small">Booking link</div>
-
-**(Add your booking link here)**
-
-<a class="btn" href="https://cal.itsbhanusharma.com" target="_blank" rel="noopener">
-  Open Scheduler
-</a>
-
+  <a class="btn" href="https://cal.itsbhanusharma.com" target="_blank" rel="noopener">
+    Open Scheduler
+  </a>
 </div>

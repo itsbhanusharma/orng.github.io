@@ -3,7 +3,7 @@ layout: default
 title: Home
 ---
 
-<div class="card-elevated">
+<div class="card-elevated" markdown="1">
 
 # Making IT Simple
 
@@ -24,7 +24,7 @@ Independent IT consulting to help organizations streamline operations, optimize 
 
 ## Our Expertise
 
-<div class="card">
+<div class="card" markdown="1">
 
 - **Community & Content Platforms**  
   Deploy and optimize forums, knowledge bases, and content management systems.

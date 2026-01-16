@@ -3,7 +3,7 @@ layout: default
 title: Contact
 ---
 
-<div class="card-elevated">
+<div class="card-elevated" markdown="1">
 
 # Contact
 
@@ -16,7 +16,7 @@ Reach us directly using the details below.
 
 ## Email
 
-<div class="card">
+<div class="card" markdown="1">
 
 <div class="small">General inquiries</div>
 
