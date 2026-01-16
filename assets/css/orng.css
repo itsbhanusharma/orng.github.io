@@ -337,7 +337,7 @@ a:hover{
   display: grid;
   grid-template-columns: 1fr;
   gap: 14px;
-  margin-top: 14px;
+  margin-top: 18px;
 }
 
 @media (min-width: 780px){
@@ -619,4 +619,40 @@ a:hover{
   margin: 0 !important;
   justify-self: stretch;
 }
+
+/* Make contact tiles feel consistent + tighter typography */
+.contact-tile{
+  gap: 8px;
+}
+
+.contact-tile .small{
+  line-height: 1.2;
+  margin-bottom: 2px;
+}
+
+.email-link{
+  line-height: 1.35;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Optional supporting line under email */
+.email-note{
+  opacity: 0.75;
+  margin-top: 2px;
+}
+
+.email-link{
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.08);
+  background: rgba(255,255,255,.015);
+}
+.email-link:hover{
+  background: rgba(255,255,255,.02);
+  border-color: rgba(255,255,255,.12);
+}
+
 
