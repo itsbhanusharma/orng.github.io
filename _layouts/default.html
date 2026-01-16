@@ -28,11 +28,12 @@
         </a>
 
         <nav class="top-nav" aria-label="Primary">
-          <a href="{{ '/' | relative_url }}">Home</a>
-          <a href="{{ '/about' | relative_url }}">About</a>
-          <a href="{{ '/contact' | relative_url }}">Contact</a>
-          <a href="{{ '/book' | relative_url }}">Book</a>
+          <a class="{% if page.url == '/' %}active{% endif %}" href="{{ '/' | relative_url }}">Home</a>
+          <a class="{% if page.url contains '/about' %}active{% endif %}" href="{{ '/about' | relative_url }}">About</a>
+          <a class="{% if page.url contains '/contact' %}active{% endif %}" href="{{ '/contact' | relative_url }}">Contact</a>
+          <a class="{% if page.url contains '/book' %}active{% endif %}" href="{{ '/book' | relative_url }}">Book</a>
         </nav>
+
       </div>
     </header>
     
