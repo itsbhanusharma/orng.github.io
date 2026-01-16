@@ -3,29 +3,39 @@ layout: default
 title: Contact
 ---
 
-# Contact Us
+<div class="card-elevated">
+
+# Contact
 
 We’d be happy to discuss how we can work together.  
-Please use the details below to reach us directly.
+Reach us directly using the details below.
+
+</div>
 
 ---
 
-## Email  
-✉️ 
-hello[at]orng.co
+## Email
 
+<div class="card">
+
+<div class="small">General inquiries</div>
+
+**hello[at]orng.co**
+
+</div>
 
 ---
 
-## Connect With Us  
+## Connect
 
-<a href="https://www.linkedin.com/company/orng-enterprises" target="_blank">
-  <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn" width="20" style="vertical-align:middle; margin-right:6px;">
+<div style="display:flex; gap:12px; flex-wrap:wrap;">
+
+<a class="btn-secondary" href="https://www.linkedin.com/company/orng-enterprises" target="_blank" rel="noopener">
   LinkedIn
-</a>  
+</a>
 
-<a href="https://x.com/ORNGEnterprises" target="_blank">
-  <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg" alt="X" width="20" style="vertical-align:middle; margin-right:6px;">
-  X (formerly Twitter)
-</a>  
+<a class="btn-secondary" href="https://x.com/ORNGEnterprises" target="_blank" rel="noopener">
+  X (Twitter)
+</a>
 
+</div>
