@@ -1,5 +1,5 @@
 /* =========================================================
-   ORNG Theme 
+   ORNG Theme
    ========================================================= */
 
 /* -----------------------
@@ -21,35 +21,45 @@
 
   --shadow: 0 18px 60px rgba(0,0,0,.55);
 
-  --r: 14px;
-
   --ease: cubic-bezier(.2,.8,.2,1);
   --t: 140ms;
 }
 
 /* -----------------------
-   2) Base
+   2) Base (Safari-safe)
    ----------------------- */
 *{ box-sizing: border-box; }
 
 html, body{
   margin: 0;
   padding: 0;
-  /* Safari behaves better with this vs height:100% */
   min-height: 100%;
 }
 
+/* IMPORTANT:
+   Keep body background SOLID for iOS Safari.
+   Gradients move to body::before to avoid phantom blocks. */
 body{
   font-family: var(--font-sans) !important;
   color: var(--text) !important;
+  background: var(--bg) !important;
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Safari-safe gradient layer */
+body::before{
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
 
   background:
     radial-gradient(1100px 700px at 20% -10%, rgba(255,138,61,.10), transparent 58%),
     radial-gradient(900px 600px at 90% 0%, rgba(167,139,250,.10), transparent 55%),
-    var(--bg) !important;
-
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
+    var(--bg);
 }
 
 .container{
@@ -85,11 +95,11 @@ p, li{
   line-height: 1.7;
 }
 
-/* Hide HR (we don't want Cayman separators) */
-hr{ display: none !important; }
-
-/* Prevent bold from looking like "slab ink" */
+/* Reduce “slab bold” */
 strong{ font-weight: 600; }
+
+/* Hide HR globally (avoid markdown/document vibe) */
+hr{ display: none !important; }
 
 /* Consistent page rhythm + alignment */
 .main-content .container > :is(
@@ -134,6 +144,8 @@ a:hover{
 
   background: rgba(9,10,11,.62) !important;
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
   border-bottom: 1px solid var(--border) !important;
 
   padding: 0 !important;
@@ -146,27 +158,43 @@ a:hover{
 
 .header-inner{
   display: flex;
-  align-items: center;
+  align-items: center !important;
   justify-content: space-between;
   padding: 14px 0;
+
+  /* breathing room so logo/nav don't kiss edges */
+  padding-left: 16px !important;
+  padding-right: 16px !important;
+}
+
+/* iPhone notch safe-area support */
+@supports (padding: max(0px)){
+  .header-inner{
+    padding-left: max(16px, env(safe-area-inset-left)) !important;
+    padding-right: max(16px, env(safe-area-inset-right)) !important;
+  }
 }
 
 .site-logo{
   height: 34px;
   width: auto;
-  display: block;
+  display: block !important;
+  vertical-align: middle !important;
+  transform: translateY(1px); /* Safari baseline fix */
 }
 
 .top-nav{
   display: flex;
   gap: 12px;
-  align-items: center;
+  align-items: center !important;
   font-size: 14px;
 }
 
 .top-nav a{
   color: var(--muted) !important;
-  padding: 8px 10px;
+  padding: 7px 9px;
+  line-height: 1 !important;
+
   border-radius: 999px;
   border: 1px solid transparent;
   text-decoration: none !important;
@@ -179,10 +207,11 @@ a:hover{
   text-decoration: none !important;
 }
 
+/* Subtle active nav pill (McK style) */
 .top-nav a.active{
-  color: var(--text) !important;
-  background: rgba(255,255,255,.08);
-  border-color: rgba(255,255,255,.10);
+  color: rgba(255,255,255,.90) !important;
+  background: rgba(255,255,255,.045) !important;
+  border-color: rgba(255,255,255,.07) !important;
 }
 
 /* -----------------------
@@ -210,6 +239,7 @@ a:hover{
     background var(--t) var(--ease);
 }
 
+/* Primary = ORNG */
 .btn{
   background: linear-gradient(180deg, rgba(255,138,61,.26), rgba(255,138,61,.12)) !important;
   border: 1px solid rgba(255,138,61,.45) !important;
@@ -223,6 +253,7 @@ a:hover{
   text-decoration: none !important;
 }
 
+/* Secondary = Neutral */
 .btn-secondary{
   background: rgba(255,255,255,.03) !important;
   border: 1px solid rgba(255,255,255,.10) !important;
@@ -247,16 +278,26 @@ a:hover{
   margin: 18px auto 0;
   border-radius: 16px;
   border: 1px solid var(--border);
+  background: var(--surface);
 }
 
+/* Corporate glass hero (less neon) */
 .hero{
   padding: 26px;
-  box-shadow: var(--shadow);
+  box-shadow: 0 10px 28px rgba(0,0,0,.45) !important;
 
   background:
-    radial-gradient(900px 500px at 10% 0%, rgba(255,138,61,.10), transparent 60%),
-    radial-gradient(700px 450px at 90% 0%, rgba(167,139,250,.10), transparent 55%),
-    var(--surface);
+    linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.02)) !important;
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Tighter hero paragraph */
+.hero p{
+  line-height: 1.55 !important;
+  font-weight: 450 !important;
+  max-width: 46ch;
 }
 
 .hero-actions{
@@ -274,7 +315,6 @@ a:hover{
 
 .cta{
   padding: 22px;
-  background: var(--surface);
   box-shadow: none;
   opacity: 0.98;
 }
@@ -284,7 +324,6 @@ a:hover{
 .contact-card,
 .scheduler-card{
   padding: 18px;
-  background: var(--surface);
 }
 
 /* -----------------------
@@ -340,37 +379,27 @@ a:hover{
 }
 
 /* =========================================================
-   Mobile polish (iPhone / Safari)
+   Mobile polish (iPhone)
    ========================================================= */
-
-/* Add a bit more edge padding so logo/nav don't kiss screen edges */
 @media (max-width: 520px){
   .container{
     padding-left: 16px;
     padding-right: 16px;
   }
 
-  /* nav spacing tighter but not cramped */
   .header-inner{
-    padding: 12px 0;
+    padding-top: 12px;
+    padding-bottom: 12px;
   }
 
   .top-nav{
     gap: 6px;
-    font-size: 14px;
   }
 
-  .top-nav a{
-    padding: 7px 10px;
-  }
-
-  /* hero padding reduced so it doesn't feel huge */
   .hero{
     padding: 18px;
-    border-radius: 16px;
   }
 
-  /* hero title + copy tighter + less "bold ugly" */
   h1{
     font-size: 34px;
     line-height: 1.12;
@@ -395,7 +424,7 @@ a:hover{
     opacity: 0.85;
   }
 
-  /* buttons stack cleanly and stop being chunky */
+  /* Stack hero buttons cleanly */
   .hero-actions{
     display: grid;
     grid-template-columns: 1fr;
@@ -411,14 +440,14 @@ a:hover{
     border-radius: 14px !important;
   }
 
-  /* secondary button less "pillowy" */
+  /* Secondary less “pillowy” */
   .btn-secondary{
     background: rgba(255,255,255,.02) !important;
     border: 1px solid rgba(255,255,255,.12) !important;
   }
 }
 
-/* Extra iOS polish */
+/* iOS text consistency */
 @supports (-webkit-touch-callout: none){
   body{
     -webkit-text-size-adjust: 100%;
