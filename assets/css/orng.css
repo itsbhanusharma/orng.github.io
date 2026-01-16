@@ -1,0 +1,520 @@
+/* =========================================================
+   ORNG Theme v1
+   Dark-first • Minimal • Rounded
+   Mono base + ORNG accent + Purple contrast
+   Designed to override GitHub Pages Cayman theme cleanly
+   ========================================================= */
+
+/* -----------------------
+   1) Tokens
+   ----------------------- */
+:root{
+  /* Typography */
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  /* Radii */
+  --r-xs: 8px;
+  --r-sm: 12px;
+  --r-md: 14px;
+  --r-lg: 18px;
+  --r-xl: 22px;
+
+  /* Spacing scale */
+  --space-1: 6px;
+  --space-2: 10px;
+  --space-3: 14px;
+  --space-4: 18px;
+  --space-5: 26px;
+  --space-6: 36px;
+  --space-7: 50px;
+
+  /* Core colors (dark mono) */
+  --bg: #090A0B;
+  --surface: #0F1114;
+  --surface-2: #141821;
+  --surface-3: #181D27;
+
+  --border: rgba(255,255,255,.08);
+  --border-2: rgba(255,255,255,.12);
+
+  --text: rgba(255,255,255,.92);
+  --muted: rgba(255,255,255,.66);
+  --subtle: rgba(255,255,255,.48);
+
+  /* Accents */
+  --orng: #FF8A3D;     /* soft orange */
+  --orng-2: #FFB26B;   /* warmer highlight */
+  --purple: #A78BFA;   /* soft purple */
+
+  /* States */
+  --danger: #FB7185;
+  --success: #34D399;
+  --warning: #FBBF24;
+
+  /* Effects */
+  --shadow-1: 0 10px 30px rgba(0,0,0,.35);
+  --shadow-2: 0 18px 60px rgba(0,0,0,.55);
+
+  /* Focus ring */
+  --focus-orng: 0 0 0 3px rgba(255,138,61,.26);
+  --focus-purple: 0 0 0 3px rgba(167,139,250,.24);
+
+  /* Smoothness */
+  --ease: cubic-bezier(.2,.8,.2,1);
+  --t-fast: 140ms;
+  --t-med: 220ms;
+}
+
+/* -----------------------
+   2) Base reset + body
+   ----------------------- */
+*{ box-sizing: border-box; }
+
+html, body{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body{
+  font-family: var(--font-sans) !important;
+  color: var(--text) !important;
+
+  /* Dark-first background with subtle brand glow */
+  background:
+    radial-gradient(1100px 700px at 20% -10%, rgba(255,138,61,.10), transparent 58%),
+    radial-gradient(900px 600px at 90% 0%, rgba(167,139,250,.10), transparent 55%),
+    radial-gradient(850px 650px at 30% 110%, rgba(255,255,255,.04), transparent 55%),
+    var(--bg) !important;
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Cayman sometimes sets a strong max width + centered content.
+   We keep content readable by default. */
+.container{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 18px;
+}
+
+/* Make main content breathe */
+.main-content{
+  padding: 28px 0 54px !important;
+}
+
+/* Better selection (feels premium) */
+::selection{
+  background: rgba(255,138,61,.25);
+  color: var(--text);
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce){
+  *{
+    transition: none !important;
+    animation: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* -----------------------
+   3) Typography
+   ----------------------- */
+h1, h2, h3, h4, h5, h6{
+  color: var(--text) !important;
+  letter-spacing: -0.02em;
+  line-height: 1.18;
+  margin-top: 28px;
+  margin-bottom: 12px;
+}
+
+h1{ font-size: clamp(28px, 4vw, 44px); }
+h2{ font-size: clamp(22px, 3vw, 30px); }
+h3{ font-size: 20px; }
+h4{ font-size: 17px; }
+h5{ font-size: 15px; }
+h6{ font-size: 14px; color: var(--muted) !important; }
+
+p{
+  color: var(--muted) !important;
+  line-height: 1.7;
+  margin: 12px 0;
+}
+
+/* Lists */
+ul, ol{
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+hr{
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 26px 0;
+}
+
+/* -----------------------
+   4) Links
+   Purple by default
+   ----------------------- */
+a{
+  color: var(--purple) !important;
+  text-decoration: none !important;
+  transition: opacity var(--t-fast) var(--ease), filter var(--t-fast) var(--ease);
+}
+
+a:hover{
+  opacity: .95;
+  text-decoration: underline !important;
+  text-underline-offset: 3px;
+}
+
+a:focus{
+  outline: none;
+  box-shadow: var(--focus-purple);
+  border-radius: var(--r-xs);
+}
+
+/* "ORNG CTA link" utility */
+a.cta{
+  color: var(--orng) !important;
+  font-weight: 600;
+}
+a.cta:hover{
+  text-decoration: none !important;
+  filter: brightness(1.08);
+}
+
+/* -----------------------
+   5) Header (sticky, minimal, glassy)
+   ----------------------- */
+.page-header{
+  position: sticky;
+  top: 0;
+  z-index: 50;
+
+  background: rgba(9,10,11,.62) !important;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border) !important;
+
+  padding: 0 !important;
+  margin: 0 !important;
+
+  /* Remove Cayman gradients */
+  background-image: none !important;
+  box-shadow: none !important;
+  text-align: left !important;
+}
+
+.header-inner{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+}
+
+.site-logo{
+  height: 34px;
+  width: auto;
+  display: block;
+}
+
+/* Optional top nav (if you add it) */
+.top-nav{
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  font-size: 14px;
+}
+
+.top-nav a{
+  color: var(--muted) !important;
+  padding: 8px 10px;
+  border-radius: 999px;
+  text-decoration: none !important;
+  border: 1px solid transparent;
+}
+
+.top-nav a:hover{
+  color: var(--text) !important;
+  background: rgba(255,255,255,.04);
+  border-color: rgba(255,255,255,.06);
+}
+
+/* -----------------------
+   6) Buttons
+   ORNG = primary action only
+   ----------------------- */
+
+/* Cayman uses .btn a lot */
+.btn{
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  padding: 12px 16px !important;
+  border-radius: var(--r-md) !important;
+
+  border: 1px solid rgba(255, 138, 61, .35) !important;
+  background: linear-gradient(180deg, rgba(255,138,61,.18), rgba(255,138,61,.08)) !important;
+
+  color: var(--text) !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+
+  transition: transform var(--t-fast) var(--ease),
+              filter var(--t-fast) var(--ease),
+              background var(--t-fast) var(--ease),
+              border-color var(--t-fast) var(--ease);
+}
+
+.btn:hover{
+  filter: brightness(1.06);
+  transform: translateY(-1px);
+}
+
+.btn:focus{
+  outline: none;
+  box-shadow: var(--focus-orng);
+}
+
+/* Secondary button (neutral) */
+.btn-secondary{
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+
+  padding: 12px 16px !important;
+  border-radius: var(--r-md) !important;
+
+  background: rgba(255,255,255,.02) !important;
+  border: 1px solid var(--border) !important;
+
+  color: var(--text) !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+
+  transition: transform var(--t-fast) var(--ease),
+              background var(--t-fast) var(--ease),
+              border-color var(--t-fast) var(--ease);
+}
+
+.btn-secondary:hover{
+  background: rgba(255,255,255,.04) !important;
+  transform: translateY(-1px);
+}
+
+.btn-secondary:focus{
+  outline: none;
+  box-shadow: var(--focus-purple);
+}
+
+/* -----------------------
+   7) Cards / Surfaces (utility)
+   ----------------------- */
+.card{
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.03), transparent 42%),
+    var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-1);
+  padding: 20px;
+}
+
+/* Optional subtle elevated surface */
+.card-elevated{
+  background:
+    radial-gradient(800px 400px at 10% 0%, rgba(255,138,61,.08), transparent 55%),
+    radial-gradient(600px 400px at 90% 0%, rgba(167,139,250,.08), transparent 55%),
+    var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--r-xl);
+  box-shadow: var(--shadow-2);
+  padding: 22px;
+}
+
+/* -----------------------
+   8) Forms
+   ----------------------- */
+input, textarea, select{
+  width: 100%;
+  max-width: 640px;
+
+  background: var(--surface) !important;
+  border: 1px solid var(--border) !important;
+
+  color: var(--text) !important;
+  border-radius: var(--r-md) !important;
+
+  padding: 12px 14px !important;
+  font-family: var(--font-sans);
+  font-size: 15px;
+
+  outline: none !important;
+
+  transition: border-color var(--t-fast) var(--ease),
+              box-shadow var(--t-fast) var(--ease),
+              background var(--t-fast) var(--ease);
+}
+
+input::placeholder, textarea::placeholder{
+  color: rgba(255,255,255,.38);
+}
+
+input:focus, textarea:focus, select:focus{
+  border-color: rgba(255,138,61,.35) !important;
+  box-shadow: var(--focus-orng);
+}
+
+/* -----------------------
+   9) Tables (for tech pages)
+   ----------------------- */
+table{
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+  border-radius: var(--r-lg);
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.02);
+}
+
+thead th{
+  background: rgba(255,255,255,.03);
+  color: var(--text);
+  font-weight: 600;
+}
+
+th, td{
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+  color: var(--muted);
+  vertical-align: top;
+}
+
+tbody tr:hover td{
+  background: rgba(255,255,255,.02);
+}
+
+/* -----------------------
+   10) Code blocks (super important for credibility)
+   ----------------------- */
+code{
+  font-family: var(--font-mono) !important;
+  font-size: 0.95em;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.06);
+  padding: 2px 7px;
+  border-radius: 999px;
+  color: rgba(255,255,255,.88);
+}
+
+pre{
+  background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.02));
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 16px 16px;
+  overflow: auto;
+  box-shadow: var(--shadow-1);
+}
+
+pre code{
+  background: transparent;
+  border: none;
+  padding: 0;
+  border-radius: 0;
+}
+
+/* -----------------------
+   11) Footer
+   ----------------------- */
+.site-footer{
+  border-top: 1px solid var(--border) !important;
+  background: rgba(255,255,255,.02) !important;
+  color: var(--muted) !important;
+
+  text-align: center;
+  padding: 22px 12px !important;
+  margin-top: 48px;
+}
+
+.footer-nav, .social-links{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 10px 0;
+}
+
+.footer-nav a{
+  color: var(--muted) !important;
+}
+
+.footer-nav a:hover{
+  color: var(--text) !important;
+  text-decoration: none !important;
+}
+
+.social-links a{
+  color: var(--muted) !important;
+  display: inline-flex;
+  padding: 10px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  transition: background var(--t-fast) var(--ease),
+              border-color var(--t-fast) var(--ease),
+              color var(--t-fast) var(--ease);
+}
+
+.social-links a:hover{
+  color: var(--text) !important;
+  background: rgba(255,255,255,.03);
+  border-color: var(--border);
+  text-decoration: none !important;
+}
+
+/* -----------------------
+   12) Skip link (keyboard accessibility)
+   ----------------------- */
+#skip-to-content{
+  position: absolute;
+  left: -999px;
+  top: 10px;
+
+  padding: 10px 14px;
+  border-radius: var(--r-md);
+
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+
+  text-decoration: none !important;
+}
+
+#skip-to-content:focus{
+  left: 12px;
+  z-index: 999;
+  outline: none;
+  box-shadow: var(--focus-orng);
+}
+
+/* -----------------------
+   13) Small utilities
+   ----------------------- */
+.small{
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.muted{
+  color: var(--muted);
+}
+
+.subtle{
+  color: var(--subtle);
+}
