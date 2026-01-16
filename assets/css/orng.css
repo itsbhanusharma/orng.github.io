@@ -1,5 +1,5 @@
 /* =========================================================
-   ORNG Theme
+   ORNG Theme 
    ========================================================= */
 
 /* -----------------------
@@ -28,24 +28,25 @@
 }
 
 /* -----------------------
-   2) Base (Safari-safe)
+   2) Base
    ----------------------- */
 *{ box-sizing: border-box; }
 
 html, body{
   margin: 0;
   padding: 0;
+  /* Safari behaves better with this vs height:100% */
   min-height: 100%;
-  background: var(--bg);
 }
 
 body{
-  min-height: 100svh; /* iOS Safari safe viewport height */
   font-family: var(--font-sans) !important;
   color: var(--text) !important;
 
-  /* IMPORTANT: keep body solid to avoid Safari phantom bands */
-  background: var(--bg) !important;
+  background:
+    radial-gradient(1100px 700px at 20% -10%, rgba(255,138,61,.10), transparent 58%),
+    radial-gradient(900px 600px at 90% 0%, rgba(167,139,250,.10), transparent 55%),
+    var(--bg) !important;
 
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -59,11 +60,6 @@ body{
 
 .main-content{
   padding: 28px 0 54px !important;
-
-  /* IMPORTANT: move gradients here (content area) */
-  background:
-    radial-gradient(1100px 700px at 20% -10%, rgba(255,138,61,.10), transparent 58%),
-    radial-gradient(900px 600px at 90% 0%, rgba(167,139,250,.10), transparent 55%);
 }
 
 ::selection{
@@ -89,9 +85,11 @@ p, li{
   line-height: 1.7;
 }
 
-hr{
-  display: none;
-}
+/* Hide HR (we don't want Cayman separators) */
+hr{ display: none !important; }
+
+/* Prevent bold from looking like "slab ink" */
+strong{ font-weight: 600; }
 
 /* Consistent page rhythm + alignment */
 .main-content .container > :is(
@@ -127,7 +125,7 @@ a:hover{
 }
 
 /* -----------------------
-   5) Header
+   5) Header / Nav
    ----------------------- */
 .page-header{
   position: sticky;
@@ -188,21 +186,28 @@ a:hover{
 }
 
 /* -----------------------
-   6) Buttons (Primary ORNG + Neutral Secondary)
+   6) Buttons
    ----------------------- */
 .btn,
 .btn-secondary{
   display: inline-flex !important;
   align-items: center;
   justify-content: center;
+
   height: 42px;
   padding: 0 16px !important;
   border-radius: 12px !important;
+
   font-weight: 600 !important;
   font-size: 14px !important;
   line-height: 1 !important;
+
   text-decoration: none !important;
-  transition: transform var(--t) var(--ease), filter var(--t) var(--ease), background var(--t) var(--ease);
+
+  transition:
+    transform var(--t) var(--ease),
+    filter var(--t) var(--ease),
+    background var(--t) var(--ease);
 }
 
 .btn{
@@ -232,7 +237,7 @@ a:hover{
 }
 
 /* -----------------------
-   7) Professional layout blocks
+   7) Layout blocks
    ----------------------- */
 .hero,
 .cta,
@@ -247,6 +252,7 @@ a:hover{
 .hero{
   padding: 26px;
   box-shadow: var(--shadow);
+
   background:
     radial-gradient(900px 500px at 10% 0%, rgba(255,138,61,.10), transparent 60%),
     radial-gradient(700px 450px at 90% 0%, rgba(167,139,250,.10), transparent 55%),
@@ -273,9 +279,7 @@ a:hover{
   opacity: 0.98;
 }
 
-.cta h2{
-  margin-top: 0;
-}
+.cta h2{ margin-top: 0; }
 
 .contact-card,
 .scheduler-card{
@@ -287,9 +291,10 @@ a:hover{
    8) Footer
    ----------------------- */
 .site-footer{
-  background: #090A0B !important;
+  background: var(--bg) !important;
   border-top: 1px solid rgba(255,255,255,.08) !important;
   box-shadow: none !important;
+
   text-align: center !important;
   padding: 22px 12px !important;
   margin-top: 48px !important;
@@ -332,4 +337,91 @@ a:hover{
 .small{
   color: var(--muted);
   font-size: 14px;
+}
+
+/* =========================================================
+   Mobile polish (iPhone / Safari)
+   ========================================================= */
+
+/* Add a bit more edge padding so logo/nav don't kiss screen edges */
+@media (max-width: 520px){
+  .container{
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  /* nav spacing tighter but not cramped */
+  .header-inner{
+    padding: 12px 0;
+  }
+
+  .top-nav{
+    gap: 6px;
+    font-size: 14px;
+  }
+
+  .top-nav a{
+    padding: 7px 10px;
+  }
+
+  /* hero padding reduced so it doesn't feel huge */
+  .hero{
+    padding: 18px;
+    border-radius: 16px;
+  }
+
+  /* hero title + copy tighter + less "bold ugly" */
+  h1{
+    font-size: 34px;
+    line-height: 1.12;
+    letter-spacing: -0.025em;
+    font-weight: 650;
+  }
+
+  h2{
+    font-size: 22px;
+    line-height: 1.18;
+    font-weight: 650;
+  }
+
+  p, li{
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .hero-meta{
+    font-size: 12.5px;
+    line-height: 1.4;
+    opacity: 0.85;
+  }
+
+  /* buttons stack cleanly and stop being chunky */
+  .hero-actions{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-top: 14px;
+  }
+
+  .hero-actions .btn,
+  .hero-actions .btn-secondary{
+    width: 100%;
+    height: 44px;
+    padding: 0 14px !important;
+    border-radius: 14px !important;
+  }
+
+  /* secondary button less "pillowy" */
+  .btn-secondary{
+    background: rgba(255,255,255,.02) !important;
+    border: 1px solid rgba(255,255,255,.12) !important;
+  }
+}
+
+/* Extra iOS polish */
+@supports (-webkit-touch-callout: none){
+  body{
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+  }
 }
