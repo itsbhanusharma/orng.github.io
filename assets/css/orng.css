@@ -36,9 +36,8 @@ html, body{
   min-height: 100%;
 }
 
-/* IMPORTANT:
-   Keep body background SOLID for iOS Safari.
-   Gradients move to body::before to avoid phantom blocks. */
+/* Keep body background solid for iOS Safari.
+   Gradients are moved to body::before to avoid rendering glitches. */
 body{
   font-family: var(--font-sans) !important;
   color: var(--text) !important;
@@ -48,7 +47,7 @@ body{
   text-rendering: optimizeLegibility;
 }
 
-/* Safari-safe gradient layer */
+/* Gradient background layer */
 body::before{
   content: "";
   position: fixed;
@@ -95,10 +94,8 @@ p, li{
   line-height: 1.7;
 }
 
-/* Reduce “slab bold” */
 strong{ font-weight: 600; }
 
-/* Hide HR globally (avoid markdown/document vibe) */
 hr{ display: none !important; }
 
 /* Consistent page rhythm + alignment */
@@ -162,7 +159,6 @@ a:hover{
   justify-content: space-between;
   padding: 14px 0;
 
-  /* breathing room so logo/nav don't kiss edges */
   padding-left: 16px !important;
   padding-right: 16px !important;
 }
@@ -180,7 +176,7 @@ a:hover{
   width: auto;
   display: block !important;
   vertical-align: middle !important;
-  transform: translateY(1px); /* Safari baseline fix */
+  transform: translateY(1px);
 }
 
 .top-nav{
@@ -207,7 +203,6 @@ a:hover{
   text-decoration: none !important;
 }
 
-/* Subtle active nav pill (McK style) */
 .top-nav a.active{
   color: rgba(255,255,255,.90) !important;
   background: rgba(255,255,255,.045) !important;
@@ -239,7 +234,6 @@ a:hover{
     background var(--t) var(--ease);
 }
 
-/* Primary = ORNG */
 .btn{
   background: linear-gradient(180deg, rgba(255,138,61,.26), rgba(255,138,61,.12)) !important;
   border: 1px solid rgba(255,138,61,.45) !important;
@@ -253,7 +247,6 @@ a:hover{
   text-decoration: none !important;
 }
 
-/* Secondary = Neutral */
 .btn-secondary{
   background: rgba(255,255,255,.03) !important;
   border: 1px solid rgba(255,255,255,.10) !important;
@@ -281,7 +274,6 @@ a:hover{
   background: var(--surface);
 }
 
-/* Corporate glass hero (less neon) */
 .hero{
   padding: 26px;
   box-shadow: 0 10px 28px rgba(0,0,0,.45) !important;
@@ -293,7 +285,6 @@ a:hover{
   -webkit-backdrop-filter: blur(10px);
 }
 
-/* Tighter hero paragraph */
 .hero p{
   line-height: 1.55 !important;
   font-weight: 450 !important;
@@ -327,21 +318,81 @@ a:hover{
 }
 
 /* -----------------------
-   8) Footer
+   Focus grid
+   ----------------------- */
+.focus-grid{
+  list-style: none;
+  padding-left: 0;
+  margin: 14px 0 0;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+
+  max-width: 860px;
+}
+
+@media (min-width: 780px){
+  .focus-grid{
+    grid-template-columns: 1fr 1fr;
+    gap: 14px 18px;
+  }
+}
+
+.focus-grid li{
+  position: relative;
+  padding: 14px;
+
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.07);
+  background: rgba(255,255,255,.015);
+
+  color: var(--muted) !important;
+  line-height: 1.55;
+
+  transition: transform var(--t) var(--ease),
+              background var(--t) var(--ease),
+              border-color var(--t) var(--ease);
+}
+
+.focus-grid li:hover{
+  transform: translateY(-1px);
+  background: rgba(255,255,255,.02);
+  border-color: rgba(255,255,255,.10);
+}
+
+.focus-grid li::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 12px;
+  bottom: 12px;
+  width: 2px;
+  border-radius: 999px;
+  background: rgba(255,138,61,.35);
+  opacity: 0.65;
+}
+
+/* -----------------------
+   8) Footer (muted)
    ----------------------- */
 .site-footer{
   background: var(--bg) !important;
-  border-top: 1px solid rgba(255,255,255,.08) !important;
+  border-top: 1px solid rgba(255,255,255,.06) !important;
   box-shadow: none !important;
 
   text-align: center !important;
-  padding: 22px 12px !important;
-  margin-top: 48px !important;
+  padding: 18px 12px !important;
+  margin-top: 44px !important;
+
+  color: rgba(255,255,255,.45) !important;
+  font-size: 13px !important;
 }
 
 .site-footer p{
   margin: 10px 0 0 !important;
-  color: var(--muted) !important;
+  color: rgba(255,255,255,.42) !important;
+  font-size: 13px !important;
 }
 
 .footer-nav, .social-links{
@@ -350,12 +401,13 @@ a:hover{
   justify-content: center;
   gap: 12px;
   flex-wrap: wrap;
-  margin: 10px 0;
+  margin: 8px 0 !important;
 }
 
 .footer-nav a,
 .social-links a{
-  color: var(--muted) !important;
+  color: rgba(255,255,255,.50) !important;
+  font-size: 13px !important;
 }
 
 .social-links a{
@@ -365,10 +417,11 @@ a:hover{
   border: 1px solid transparent;
 }
 
+.footer-nav a:hover,
 .social-links a:hover{
-  color: var(--text) !important;
+  color: rgba(255,255,255,.72) !important;
   background: rgba(255,255,255,.03);
-  border-color: var(--border);
+  border-color: rgba(255,255,255,.06);
   text-decoration: none !important;
 }
 
@@ -378,9 +431,9 @@ a:hover{
   font-size: 14px;
 }
 
-/* =========================================================
-   Mobile polish (iPhone)
-   ========================================================= */
+/* -----------------------
+   Mobile polish
+   ----------------------- */
 @media (max-width: 520px){
   .container{
     padding-left: 16px;
@@ -424,7 +477,6 @@ a:hover{
     opacity: 0.85;
   }
 
-  /* Stack hero buttons cleanly */
   .hero-actions{
     display: grid;
     grid-template-columns: 1fr;
@@ -440,10 +492,17 @@ a:hover{
     border-radius: 14px !important;
   }
 
-  /* Secondary less “pillowy” */
   .btn-secondary{
     background: rgba(255,255,255,.02) !important;
     border: 1px solid rgba(255,255,255,.12) !important;
+  }
+
+  .focus-grid{
+    gap: 10px;
+  }
+
+  .focus-grid li{
+    padding: 12px;
   }
 }
 
