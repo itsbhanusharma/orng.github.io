@@ -10,8 +10,8 @@ title: Home
 Independent technology advisory supporting modernization, resilience, and scalable execution across critical systems.
 
 <div class="hero-actions">
-  <a class="btn" href="/contact">Get in Touch</a>
-  <a class="btn-secondary" href="/book">Book a Call</a>
+  <a class="btn" href="/contact">Get in touch</a>
+  <a class="btn-secondary" href="/about">Learn more</a>
 </div>
 
 <div class="hero-meta">
@@ -27,13 +27,3 @@ Independent technology advisory supporting modernization, resilience, and scalab
 - **Reliability, Security & Performance**  
 - **Networking & DNS Foundations**  
 - **Automation & Applied AI**
-
-<div class="cta" markdown="1">
-
-## Ready to move?
-
-Let’s align on priorities and define the next set of actions.
-
-<a class="btn" href="/contact">Contact Us</a>
-
-</div>
