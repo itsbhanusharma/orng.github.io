@@ -5,28 +5,38 @@ title: Home
 
 <div class="hero" markdown="1">
 
-# Making IT Simple
+# Making IT simple.
 
-Independent technology advisory supporting modernization, resilience, and scalable execution across critical systems.
+Independent technology advisory for teams that need systems to be reliable, scalable, and easy to run.
 
 <div class="hero-actions">
-  <a class="btn" href="/contact">Get in touch</a>
+  <a class="btn" href="/contact#schedule">Schedule a call</a>
   <a class="btn-secondary" href="/about">Learn more</a>
 </div>
 
 <div class="hero-meta">
-  Outcome-driven • Vendor-neutral • Execution-focused
+  Infrastructure • Platforms • Operations
 </div>
 
 </div>
 
-<h2>Focus areas</h2>
+## Focus areas
 
 <ul class="focus-grid">
-  <li>Platforms & Content Operations</li>
-  <li>Infrastructure & Cloud Architecture</li>
-  <li>Reliability, Security & Performance</li>
-  <li>Networking & DNS Foundations</li>
-  <li>Automation & Applied AI</li>
+  <li>Architecture reviews and modernization roadmaps</li>
+  <li>Infrastructure and cloud foundations</li>
+  <li>Reliability, performance, and observability</li>
+  <li>Security hardening and operational resilience</li>
+  <li>Networking, DNS, and edge design</li>
+  <li>Automation to reduce operational overhead</li>
 </ul>
 
+<div class="cta" markdown="1">
+
+## Ready to move faster with fewer surprises?
+
+Clear recommendations, pragmatic execution support, and systems designed to hold up under real-world use.
+
+<a class="btn" href="/contact">Get in touch</a>
+
+</div>
