@@ -39,7 +39,7 @@ Schedule a short call or reach out via email.
   Typical response time: within 24 hours
 </div>
 
-**hello[at]orng.co**
+hello[at]orng.co
 
 </div>
 
