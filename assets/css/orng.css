@@ -657,5 +657,6 @@ a:hover{
 
 h2#schedule {
    margin: 3rem;
+   margin-left: 0;
 }
 
