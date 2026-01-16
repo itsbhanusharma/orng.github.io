@@ -87,11 +87,7 @@ p, li{
 }
 
 hr{
-  border: none;
-  border-top: 1px solid var(--border);
-  margin: 22px auto;
-  max-width: 860px;
-  opacity: .08;
+  display: none;
 }
 
 /* Consistent page rhythm + alignment */
@@ -181,7 +177,7 @@ a:hover{
 
 .top-nav a.active{
   color: var(--text) !important;
-  background: rgba(255,255,255,.06);
+  background: rgba(255,255,255,.08);
   border-color: rgba(255,255,255,.10);
 }
 
@@ -212,6 +208,8 @@ a:hover{
 .btn:hover{
   filter: brightness(1.10);
   transform: translateY(-1px);
+  color: rgba(255,255,255,.94) !important;   
+  text-decoration: none !important;
 }
 
 .btn-secondary{
@@ -223,6 +221,8 @@ a:hover{
 .btn-secondary:hover{
   background: rgba(255,255,255,.05) !important;
   transform: translateY(-1px);
+  color: rgba(255,255,255,.85) !important;
+  text-decoration: none !important;
 }
 
 /* -----------------------
