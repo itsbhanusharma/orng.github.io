@@ -11,11 +11,9 @@ Please use the details below to reach us directly.
 ---
 
 ## Email  
-✉️ **General Inquiries**  
-[hello@orng.co](mailto:hello@orng.co)  
+✉️ 
+hello[at]orng.co
 
-💻 **Technical Support**  
-[support@orng.co](mailto:support@orng.co)  
 
 ---
 
@@ -31,9 +29,3 @@ Please use the details below to reach us directly.
   X (formerly Twitter)
 </a>  
 
----
-
-## Our Location  
-ORNG Enterprises, 
-Swami Pranavananda Marg, 
-New Delhi, India
