@@ -1,146 +1,24 @@
-/* =======================
-   Base + Layout
-   ======================= */
 html, body {
   margin: 0;
   padding: 0;
 }
 
 body {
-  /* Sticky footer layout */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-
-  /* Colors */
-  background-color: #FFFFFF; /* content background */
-  color: #333333;            /* body text */
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 }
 
-/* The Cayman layout uses <main id="content" class="main-content"> */
 .main-content {
-  flex: 1 0 auto; /* fills remaining space so footer drops to bottom */
-   h1, h2, h3, h4, h5, h6 {
-      color: #1e1e24;
-   }
+  flex: 1 0 auto;
 }
 
-/* Header */
-
-header.page-header {
-  background-image: none !important;
-  background-color: #1F1F1F !important; /* dark grey */
-  color: #EEEEEE !important;
-  text-align: center;
-  padding: 20px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* subtle separation from content */
-}
-
-/* Ensure header text/links remain readable */
-header.page-header .project-name,
-header.page-header .project-tagline,
-header.page-header a {
-  color: #EEEEEE !important;
-}
-
-/* Optional logo sizing */
 .site-logo {
-  height: 48px;
+  height: 34px;
   width: auto;
-  margin: 10px 0;
+  display: block;
 }
 
-/* =======================
-   Links & Buttons (orange accent)
-   ======================= */
-a, .btn {
-  color: #FF6600; /* accent */
-  text-decoration: none;
-}
-
-a:hover, .btn:hover {
-  color: #CC5200; /* darker accent on hover */
-}
-
-/* Primary button – Orange gradient */
-.btn {
-  display: inline-block;
-  background: linear-gradient(120deg, #FF6F3C, #FF914D); /* orange gradient */
-  color: #ffffff !important;
-  padding: 10px 20px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: background 0.3s ease, transform 0.2s ease;
-}
-
-.btn:hover {
-  background: #FF6F3C; /* solid orange on hover */
-  transform: translateY(-2px);
-}
-
-/* Secondary button – Navy outline */
-.btn-secondary {
-  display: inline-block;
-  background: transparent;
-  color: #1E3D59 !important; /* navy text */
-  border: 2px solid #1E3D59;
-  padding: 8px 18px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
-}
-
-.btn-secondary:hover {
-  background: #1E3D59; /* navy fill */
-  color: #ffffff !important;
-  transform: translateY(-2px);
-}
-
-
-/* =======================
-   Footer (sticky + muted)
-   ======================= */
 .site-footer {
-  margin-top: auto;            /* guarantees it sticks to bottom */
-  width: 100%;
-  background: #1F1F1F;
-  color: #999999;
-  text-align: center;
-  padding: 20px;
-  font-size: 0.9em;
-  border-top: 1px solid #333;  /* subtle divider */
-}
-
-.site-footer .footer-nav {
-  margin-bottom: 8px;
-}
-
-.site-footer .footer-nav a {
-  color: #999999;
-  margin: 0 6px;
-  text-decoration: none;
-}
-
-.site-footer .footer-nav a:hover {
-   color: #FF6600; /* orange hover accent */
-}
-
-.site-footer .social-links {
-   margin: 10px 0;
-}
-
-.site-footer .social-links a {
-   display: inline-block;
-   margin: 0 6px;
-   opacity: 0.7;
-   transition: opacity 0.2s ease-in-out;
-   color: #fff;  /* makes icons white */
-}
-
-.site-footer .social-links a:hover {
-   opacity: 1;
-   color: #FF6600; /* hover accent */
+  margin-top: auto;
 }
