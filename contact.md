@@ -2,6 +2,7 @@
 layout: default
 title: Contact
 permalink: /contact
+body_class: page-contact
 ---
 
 <div class="hero" markdown="1">
