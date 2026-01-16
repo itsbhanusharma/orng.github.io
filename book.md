@@ -8,11 +8,10 @@ permalink: /book
 
 # Book a Call
 
-Pick a time that works for you and I’ll confirm the meeting.  
-Fast, simple, and no back-and-forth.
+A short, structured conversation to align on your priorities and define next steps.
 
 <div class="hero-meta">
-  Typically 15–30 minutes • Remote • India-friendly scheduling
+  15–30 minutes • Remote • India-friendly scheduling
 </div>
 
 <div class="hero-actions">
@@ -22,15 +21,12 @@ Fast, simple, and no back-and-forth.
 
 </div>
 
----
+## Agenda
 
-## What to expect
-
-- Quick understanding of your needs and current setup  
-- Straightforward recommendations (no fluff)  
-- Next steps + optional follow-up plan  
-
----
+- Context and constraints  
+- Current-state assessment (high level)  
+- Priorities and decision points  
+- Recommended next actions  
 
 ## Scheduler
 
@@ -38,7 +34,7 @@ Fast, simple, and no back-and-forth.
 
 <div class="small">Booking link</div>
 
-<a class="btn" href="https://cal.itsbhanusharma.com" target="_blank" rel="noopener">
+<a class="btn" href="https://YOUR-BOOKING-LINK-HERE" target="_blank" rel="noopener">
   Open Scheduler
 </a>
 
