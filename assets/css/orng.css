@@ -265,7 +265,8 @@ a:hover{
    ----------------------- */
 .hero,
 .cta,
-.contact-card {
+.contact-card,
+.scheduler-card{
   max-width: 860px;
   margin: 18px auto 0;
   border-radius: 16px;
