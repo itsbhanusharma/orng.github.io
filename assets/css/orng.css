@@ -89,8 +89,25 @@ p, li{
 hr{
   border: none;
   border-top: 1px solid var(--border);
-  margin: 26px 0;
-  opacity: .14;
+  margin: 22px auto;
+  max-width: 860px;
+  opacity: .08;
+}
+
+/* Consistent page rhythm + alignment */
+.main-content .container > *{
+  max-width: 860px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.main-content ul{
+  margin: 10px 0 0;
+  padding-left: 18px;
+}
+
+.main-content li{
+  margin: 6px 0;
 }
 
 /* -----------------------
@@ -160,6 +177,12 @@ a:hover{
   background: rgba(255,255,255,.04);
   border-color: rgba(255,255,255,.06);
   text-decoration: none !important;
+}
+
+.top-nav a.active{
+  color: var(--text) !important;
+  background: rgba(255,255,255,.06);
+  border-color: rgba(255,255,255,.10);
 }
 
 /* -----------------------
@@ -240,6 +263,8 @@ a:hover{
 .cta{
   padding: 22px;
   background: var(--surface);
+  box-shadow: none;
+  opacity: 0.98;
 }
 
 .cta h2{
