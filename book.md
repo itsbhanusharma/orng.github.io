@@ -41,11 +41,7 @@ Fast, simple, and no back-and-forth.
 <div class="card" id="scheduler">
 
 <div class="small">Booking link</div>
-
-**(Add your booking link here)**
-
-<a class="btn" href="https://cal.itsbhanusharma.com" target="_blank" rel="noopener">
-  Open Scheduler
-</a>
-
+  <a class="btn" href="https://cal.itsbhanusharma.com" target="_blank" rel="noopener">
+    Open Scheduler
+  </a>
 </div>
