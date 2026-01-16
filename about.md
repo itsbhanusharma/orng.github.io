@@ -8,7 +8,7 @@ layout: default
 
 # About ORNG Enterprises
 
-ORNG Enterprises is an independent technology advisory focused on building systems that are resilient, scalable, and easy to operate.
+ORNG Enterprises is an IT advisory focused on building systems that are resilient, scalable, and easy to operate.
 We help teams reduce complexity, improve reliability, and make infrastructure decisions with confidence.
 
 <div class="hero-meta">
