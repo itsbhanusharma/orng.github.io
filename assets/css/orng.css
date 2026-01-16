@@ -1,7 +1,5 @@
 /* =========================================================
-   ORNG Theme (Simplified)
-   Dark-first • Minimal • Professional
-   Mono base + ORNG primary + Purple links
+   ORNG Theme
    ========================================================= */
 
 /* -----------------------
@@ -30,7 +28,7 @@
 }
 
 /* -----------------------
-   2) Base
+   2) Base (Safari-safe)
    ----------------------- */
 *{ box-sizing: border-box; }
 
@@ -38,16 +36,16 @@ html, body{
   margin: 0;
   padding: 0;
   min-height: 100%;
+  background: var(--bg);
 }
 
 body{
+  min-height: 100svh; /* iOS Safari safe viewport height */
   font-family: var(--font-sans) !important;
   color: var(--text) !important;
 
-  background:
-    radial-gradient(1100px 700px at 20% -10%, rgba(255,138,61,.10), transparent 58%),
-    radial-gradient(900px 600px at 90% 0%, rgba(167,139,250,.10), transparent 55%),
-    var(--bg) !important;
+  /* IMPORTANT: keep body solid to avoid Safari phantom bands */
+  background: var(--bg) !important;
 
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -61,6 +59,11 @@ body{
 
 .main-content{
   padding: 28px 0 54px !important;
+
+  /* IMPORTANT: move gradients here (content area) */
+  background:
+    radial-gradient(1100px 700px at 20% -10%, rgba(255,138,61,.10), transparent 58%),
+    radial-gradient(900px 600px at 90% 0%, rgba(167,139,250,.10), transparent 55%);
 }
 
 ::selection{
@@ -211,7 +214,7 @@ a:hover{
 .btn:hover{
   filter: brightness(1.10);
   transform: translateY(-1px);
-  color: rgba(255,255,255,.94) !important;   
+  color: rgba(255,255,255,.94) !important;
   text-decoration: none !important;
 }
 
@@ -296,7 +299,6 @@ a:hover{
   margin: 10px 0 0 !important;
   color: var(--muted) !important;
 }
-
 
 .footer-nav, .social-links{
   display: flex;
