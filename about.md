@@ -1,39 +1,37 @@
 ---
+title: About
+permalink: /about
 layout: default
-title: Home
 ---
 
 <div class="hero" markdown="1">
 
-# Making IT Simple
+# About ORNG Enterprises
 
-Independent technology advisory supporting modernization, resilience, and scalable execution across critical systems.
-
-<div class="hero-actions">
-  <a class="btn" href="/contact">Get in Touch</a>
-  <a class="btn-secondary" href="/book">Book a Call</a>
-</div>
+ORNG Enterprises is an independent technology advisory focused on building systems that are resilient, scalable, and easy to operate.
+We help teams reduce complexity, improve reliability, and make infrastructure decisions with confidence.
 
 <div class="hero-meta">
-  Outcome-driven • Vendor-neutral • Execution-focused
+  Independent • Vendor-neutral • Execution-aware
 </div>
 
 </div>
 
-## Focus areas
+## What we do
 
-- Platforms & Content Operations
-- Infrastructure & Cloud Architecture
-- Reliability, Security & Performance
-- Networking & DNS Foundations
-- Automation & Applied AI
+We work with organizations that need dependable technical direction—without noise, vendor bias, or unnecessary complexity.
+The outcome is simple: infrastructure and platforms that stay stable, perform predictably, and remain maintainable over time.
 
-<div class="cta" markdown="1">
+## How we work
 
-## Ready to move?
+Engagements typically start with a short discovery call to understand your environment, constraints, and goals.
+From there, we provide a clear plan with actionable recommendations that your team can implement immediately—or we can support execution as needed.
 
-Let’s align on priorities and define the next set of actions.
+## Next step
 
-<a class="btn" href="/contact">Contact Us</a>
+If you’d like to discuss your current setup, schedule a quick call or reach out directly.
 
+<div class="hero-actions">
+  <a class="btn" href="/contact">Get in touch</a>
+  <a class="btn-secondary" href="/contact#schedule">Schedule a call</a>
 </div>
