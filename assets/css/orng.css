@@ -318,45 +318,88 @@ a:hover{
 }
 
 /* =========================================================
-   Contact tile polish (email consistency + copy)
+   Contact page layout (fixed)
    ========================================================= */
 
-/* Make tile content align like scheduler tile */
+/* Contact hero can be wider, but text stays clean */
+.page-contact .hero{
+  max-width: 1100px;
+}
+
+.page-contact .hero > :is(h1, h2, h3, p, .hero-actions, .hero-meta){
+  max-width: 860px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 2-column layout */
+.contact-grid{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  margin-top: 14px;
+}
+
+@media (min-width: 780px){
+  .contact-grid{
+    grid-template-columns: 1fr 1fr;
+    gap: 16px 18px;
+    align-items: stretch;
+  }
+}
+
+/* Make both tiles behave like consistent cards */
 .contact-tile{
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: 10px;
+  min-height: 170px;
 }
 
-/* Email should look like a "field", not a purple nav link */
+/* Ensure both tiles stretch equally */
+.contact-grid > .scheduler-card,
+.contact-grid > .contact-card{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Email link should look like a field, not a purple hyperlink */
 .email-link{
   display: inline-block;
-  color: rgba(255,255,255,.88) !important;
-  text-decoration: none !important;
-  font-weight: 550;
+  margin-top: 6px;
+
+  font-size: 16px;
+  font-weight: 600;
   letter-spacing: -0.01em;
+
+  color: rgba(255,255,255,.92) !important;
+  text-decoration: none !important;
 }
 
 .email-link:hover{
-  color: rgba(255,255,255,.92) !important;
+  color: rgba(255,255,255,.94) !important;
   text-decoration: underline !important;
   text-underline-offset: 3px;
 }
 
-/* Actions row inside tiles (Copy + status) */
+/* Actions row inside tiles */
 .tile-actions{
+  margin-top: 14px;
   display: flex;
-  align-items: center;
   gap: 10px;
-  margin-top: 6px;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-/* Copy button polish */
+/* Copy button = consistent sizing */
 .copy-btn{
   height: 40px !important;
   padding: 0 14px !important;
   border-radius: 12px !important;
   cursor: pointer;
+  font-size: 13.5px !important;
 }
 
 .copy-btn:active{
@@ -364,6 +407,7 @@ a:hover{
 }
 
 .copy-status{
+  min-height: 18px;
   opacity: 0.75;
 }
 
@@ -555,9 +599,7 @@ a:hover{
     padding: 12px;
   }
 
-  /* Tile actions stack nicer on very small screens */
   .tile-actions{
-    flex-wrap: wrap;
     row-gap: 6px;
   }
 }
@@ -569,100 +611,3 @@ a:hover{
     -webkit-font-smoothing: antialiased;
   }
 }
-
-/* -----------------------
-   Contact layout (desktop: 2 columns, mobile: 1 column)
-   ----------------------- */
-.contact-grid{
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 14px;
-  margin-top: 14px;
-}
-
-@media (min-width: 780px){
-  .contact-grid{
-    grid-template-columns: 1fr 1fr;
-    gap: 16px 18px;
-    align-items: stretch;
-  }
-
-  /* Ensure both cards match height */
-  .contact-grid > .scheduler-card,
-  .contact-grid > .contact-card{
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-  }
-}
-
-/* =========================================================
-   Contact page polish
-   ========================================================= */
-
-.contact-grid{
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 14px;
-  margin-top: 14px;
-}
-
-/* Desktop: balanced tiles */
-@media (min-width: 780px){
-  .contact-grid{
-    grid-template-columns: 1.35fr 0.65fr;
-    gap: 16px 18px;
-    align-items: stretch;
-  }
-}
-
-/* Make both tiles behave like proper cards */
-.contact-tile{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-  min-height: 165px;
-}
-
-/* Email presentation */
-.email-link{
-  display: inline-block;
-  margin-top: 6px;
-
-  font-size: 16px;
-  font-weight: 600;
-  color: rgba(255,255,255,.92) !important;
-
-  text-decoration: none !important;
-}
-
-.email-link:hover{
-  text-decoration: underline !important;
-  text-underline-offset: 3px;
-}
-
-/* Align the bottom actions consistently */
-.tile-actions{
-  margin-top: 14px;
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-/* Make Copy button not look like a random mini-chip */
-.copy-btn{
-  height: 38px !important;
-  padding: 0 14px !important;
-  border-radius: 12px !important;
-  font-size: 13.5px !important;
-}
-
-/* Optional: small status text */
-.copy-status{
-  min-height: 18px;
-  opacity: 0.75;
-}
-
