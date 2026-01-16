@@ -23,7 +23,7 @@ Independent technology advisory for teams that need systems to be reliable, scal
 ## Focus areas
 
 <ul class="focus-grid">
-  <li>Architecture reviews and modernization roadmaps</li>
+  <li>Technical reviews and roadmaps</li>
   <li>Infrastructure and cloud foundations</li>
   <li>Reliability, performance, and observability</li>
   <li>Security hardening and operational resilience</li>
