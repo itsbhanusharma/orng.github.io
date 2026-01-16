@@ -4,7 +4,7 @@ permalink: /about
 layout: default
 ---
 
-<div class="card-elevated" markdown="1">
+<div class="hero" markdown="1">
 
 # About ORNG Enterprises
 
@@ -12,7 +12,7 @@ ORNG Enterprises is an independent IT consulting firm dedicated to helping busin
 
 We provide practical, no-nonsense guidance to organizations seeking to modernize systems, optimize performance, and adopt future-ready solutions.
 
-<div class="small" style="margin-top:16px;">
+<div class="hero-meta">
   Independent • Vendor-neutral • Built for long-term stability
 </div>
 
@@ -22,45 +22,30 @@ We provide practical, no-nonsense guidance to organizations seeking to modernize
 
 ## What We Do
 
-<div class="card" markdown="1">
-
 We support clients across a wide range of technology areas:
 
-- **Community & Content Platforms**  
-  Deploying and optimizing discussion forums, knowledge bases, and content management systems.
-
-- **Application & Server Management**  
-  Secure, stable, and efficient system operations through expert configuration and optimization.
-
-- **Cloud & Infrastructure Consulting**  
-  Designing and scaling infrastructure environments for resilience and growth.
-
-- **Networking & DNS Solutions**  
-  Reliable DNS and networking strategies to keep businesses connected.
-
-- **AI & Automation**  
-  Applying AI and automation to streamline workflows and drive innovation.
-
-</div>
+- **Community & Content Platforms** — discussion forums, knowledge bases, CMS  
+- **Application & Server Management** — stability, security, performance  
+- **Cloud & Infrastructure Consulting** — scalable systems for growth  
+- **Networking & DNS Solutions** — reliable connectivity foundations  
+- **AI & Automation** — practical workflows and efficiency improvements  
 
 ---
 
 ## Our Approach
 
-<div class="card">
-
-Our philosophy is simple:  
 Technology should **work for your business, not against it**.
 
-We focus on delivering independent, vendor-neutral consulting that aligns directly with your goals — whether you're optimizing existing systems, planning for growth, or exploring AI opportunities.
-
-</div>
+We focus on clear outcomes, long-term maintainability, and vendor-neutral recommendations — whether you’re optimizing an existing environment, planning for growth, or exploring automation.
 
 ---
 
-## Let’s Connect
+<div class="cta" markdown="1">
 
-We’re always open to new collaborations and opportunities.  
-Get in touch to discuss how we can simplify technology for your organization.
+## Let’s connect
+
+Get in touch to discuss how ORNG can simplify and strengthen your technology foundation.
 
 <a class="btn" href="/contact">Contact Us</a>
+
+</div>
