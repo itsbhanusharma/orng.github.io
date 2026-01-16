@@ -1,50 +1,38 @@
 ---
-title: About
-permalink: /about
 layout: default
+title: Home
 ---
 
 <div class="hero" markdown="1">
 
-# About ORNG Enterprises
+# Making IT Simple
 
-ORNG Enterprises is an independent IT consulting firm dedicated to helping businesses make technology **simple, reliable, and scalable**.
+Independent technology advisory supporting modernization, resilience, and scalable execution across critical systems.
 
-We provide practical, no-nonsense guidance to organizations seeking to modernize systems, optimize performance, and adopt future-ready solutions.
+<div class="hero-actions">
+  <a class="btn" href="/contact">Get in Touch</a>
+  <a class="btn-secondary" href="/book">Book a Call</a>
+</div>
 
 <div class="hero-meta">
-  Independent • Vendor-neutral • Built for long-term stability
+  Outcome-driven • Vendor-neutral • Execution-focused
 </div>
 
 </div>
 
----
+## Focus areas
 
-## What We Do
-
-We support clients across a wide range of technology areas:
-
-- **Community & Content Platforms** — discussion forums, knowledge bases, CMS  
-- **Application & Server Management** — stability, security, performance  
-- **Cloud & Infrastructure Consulting** — scalable systems for growth  
-- **Networking & DNS Solutions** — reliable connectivity foundations  
-- **AI & Automation** — practical workflows and efficiency improvements  
-
----
-
-## Our Approach
-
-Technology should **work for your business, not against it**.
-
-We focus on clear outcomes, long-term maintainability, and vendor-neutral recommendations — whether you’re optimizing an existing environment, planning for growth, or exploring automation.
-
----
+- **Platforms & Content Operations**  
+- **Infrastructure & Cloud Architecture**  
+- **Reliability, Security & Performance**  
+- **Networking & DNS Foundations**  
+- **Automation & Applied AI**
 
 <div class="cta" markdown="1">
 
-## Let’s connect
+## Ready to move?
 
-Get in touch to discuss how ORNG can simplify and strengthen your technology foundation.
+Let’s align on priorities and define the next set of actions.
 
 <a class="btn" href="/contact">Contact Us</a>
 
