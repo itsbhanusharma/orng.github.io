@@ -35,14 +35,9 @@ For enquiries and new engagements, schedule a short call or reach out by email.
   <div class="contact-card contact-tile">
     <div class="small">Email</div>
 
-    <a class="email-link" href="mailto:hello@orng.co">hello@orng.co</a>
+      <a class="email-link" href="mailto:hello@orng.co">hello@orng.co</a>
+      <div class="small email-note">Typically respond within 24 hours</div>
 
-    <div class="tile-actions">
-      <button class="btn-secondary copy-btn" type="button" data-copy="hello@orng.co">
-        Copy
-      </button>
-      <span class="copy-status small" aria-live="polite"></span>
-    </div>
   </div>
 
 </div>
