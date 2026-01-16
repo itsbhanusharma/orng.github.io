@@ -513,3 +513,26 @@ a:hover{
     -webkit-font-smoothing: antialiased;
   }
 }
+
+/* -----------------------
+   Contact layout (desktop: 2 columns, mobile: 1 column)
+   ----------------------- */
+.contact-grid{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  margin-top: 14px;
+}
+
+@media (min-width: 780px){
+  .contact-grid{
+    grid-template-columns: 1fr 1fr;
+    gap: 16px 18px;
+    align-items: stretch;
+  }
+
+  .contact-grid > .scheduler-card,
+  .contact-grid > .contact-card{
+    height: 100%;
+  }
+}
