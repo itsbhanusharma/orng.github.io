@@ -336,6 +336,7 @@ a.cta:hover{
   border-radius: var(--r-xl);
   box-shadow: var(--shadow-2);
   padding: 22px;
+  max-width: 860px;
 }
 
 /* -----------------------
