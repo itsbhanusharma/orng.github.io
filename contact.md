@@ -8,44 +8,30 @@ permalink: /contact
 
 # Contact
 
-Select the channel that best fits your needs.  
-Schedule a short call or reach out via email.
+For enquiries and new engagements, schedule a short call or reach out by email.
 
 <div class="hero-meta">
-  Remote • 15–30 minutes • India-friendly scheduling
+  Remote • 15–30 minutes • Response within 24 hours
 </div>
 
 </div>
 
-## Schedule a call
+<h2 id="schedule">Schedule a call</h2>
 
-<div class="scheduler-card" markdown="1">
+<div class="contact-grid">
 
-<div class="small">
-  Availability: Monday–Friday (excluding national holidays)
-</div>
+  <div class="scheduler-card" markdown="1">
+  <div class="small">Available Monday–Friday (excluding national holidays)</div>
 
-<a class="btn" href="https://cal.itsbhanusharma.com" target="_blank" rel="noopener">
-  Schedule a call
-</a>
+  <a class="btn" href="https://cal.itsbhanusharma.com" target="_blank" rel="noopener">
+    Book a time
+  </a>
+  </div>
 
-</div>
+  <div class="contact-card" markdown="1">
+  <div class="small">Email</div>
 
-## Email
+  hello[at]orng.co
+  </div>
 
-<div class="contact-card" markdown="1">
-
-<div class="small">
-  Typical response time: within 24 hours
-</div>
-
-hello[at]orng.co
-
-</div>
-
-## Connect
-
-<div class="hero-actions">
-  <a class="btn-secondary" href="https://www.linkedin.com/company/orng-enterprises" target="_blank" rel="noopener">LinkedIn</a>
-  <a class="btn-secondary" href="https://x.com/ORNGEnterprises" target="_blank" rel="noopener">X (Twitter)</a>
 </div>
