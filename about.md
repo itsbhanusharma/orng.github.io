@@ -4,7 +4,7 @@ permalink: /about
 layout: default
 ---
 
-<div class="card-elevated">
+<div class="card-elevated" markdown="1">
 
 # About ORNG Enterprises
 
@@ -22,7 +22,7 @@ We provide practical, no-nonsense guidance to organizations seeking to modernize
 
 ## What We Do
 
-<div class="card">
+<div class="card" markdown="1">
 
 We support clients across a wide range of technology areas:
 
