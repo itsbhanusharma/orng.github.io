@@ -538,3 +538,7 @@ pre code{
   margin: 6px 0;
 }
 
+hr {
+  opacity: 0.12;
+}
+
