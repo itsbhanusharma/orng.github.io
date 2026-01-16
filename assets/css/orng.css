@@ -1,7 +1,5 @@
 /* =========================================================
-   ORNG Theme (Simplified)
-   Dark-first • Minimal • Professional
-   Mono base + ORNG primary + Purple links
+   ORNG Theme
    ========================================================= */
 
 /* -----------------------
@@ -23,34 +21,45 @@
 
   --shadow: 0 18px 60px rgba(0,0,0,.55);
 
-  --r: 14px;
-
   --ease: cubic-bezier(.2,.8,.2,1);
   --t: 140ms;
 }
 
 /* -----------------------
-   2) Base
+   2) Base (Safari-safe)
    ----------------------- */
 *{ box-sizing: border-box; }
 
 html, body{
   margin: 0;
   padding: 0;
-  height: 100%;
+  min-height: 100%;
 }
 
+/* IMPORTANT:
+   Keep body background SOLID for iOS Safari.
+   Gradients move to body::before to avoid phantom blocks. */
 body{
   font-family: var(--font-sans) !important;
   color: var(--text) !important;
+  background: var(--bg) !important;
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Safari-safe gradient layer */
+body::before{
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
 
   background:
     radial-gradient(1100px 700px at 20% -10%, rgba(255,138,61,.10), transparent 58%),
     radial-gradient(900px 600px at 90% 0%, rgba(167,139,250,.10), transparent 55%),
-    var(--bg) !important;
-
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
+    var(--bg);
 }
 
 .container{
@@ -86,12 +95,17 @@ p, li{
   line-height: 1.7;
 }
 
-hr{
-  display: none;
-}
+/* Reduce “slab bold” */
+strong{ font-weight: 600; }
+
+/* Hide HR globally (avoid markdown/document vibe) */
+hr{ display: none !important; }
 
 /* Consistent page rhythm + alignment */
-.main-content .container > *{
+.main-content .container > :is(
+  h1, h2, h3, p, ul, ol, blockquote, pre,
+  .hero, .cta, .contact-card, .scheduler-card
+){
   max-width: 860px;
   margin-left: auto;
   margin-right: auto;
@@ -121,7 +135,7 @@ a:hover{
 }
 
 /* -----------------------
-   5) Header
+   5) Header / Nav
    ----------------------- */
 .page-header{
   position: sticky;
@@ -130,6 +144,8 @@ a:hover{
 
   background: rgba(9,10,11,.62) !important;
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
   border-bottom: 1px solid var(--border) !important;
 
   padding: 0 !important;
@@ -142,27 +158,43 @@ a:hover{
 
 .header-inner{
   display: flex;
-  align-items: center;
+  align-items: center !important;
   justify-content: space-between;
   padding: 14px 0;
+
+  /* breathing room so logo/nav don't kiss edges */
+  padding-left: 16px !important;
+  padding-right: 16px !important;
+}
+
+/* iPhone notch safe-area support */
+@supports (padding: max(0px)){
+  .header-inner{
+    padding-left: max(16px, env(safe-area-inset-left)) !important;
+    padding-right: max(16px, env(safe-area-inset-right)) !important;
+  }
 }
 
 .site-logo{
   height: 34px;
   width: auto;
-  display: block;
+  display: block !important;
+  vertical-align: middle !important;
+  transform: translateY(1px); /* Safari baseline fix */
 }
 
 .top-nav{
   display: flex;
   gap: 12px;
-  align-items: center;
+  align-items: center !important;
   font-size: 14px;
 }
 
 .top-nav a{
   color: var(--muted) !important;
-  padding: 8px 10px;
+  padding: 7px 9px;
+  line-height: 1 !important;
+
   border-radius: 999px;
   border: 1px solid transparent;
   text-decoration: none !important;
@@ -175,30 +207,39 @@ a:hover{
   text-decoration: none !important;
 }
 
+/* Subtle active nav pill (McK style) */
 .top-nav a.active{
-  color: var(--text) !important;
-  background: rgba(255,255,255,.08);
-  border-color: rgba(255,255,255,.10);
+  color: rgba(255,255,255,.90) !important;
+  background: rgba(255,255,255,.045) !important;
+  border-color: rgba(255,255,255,.07) !important;
 }
 
 /* -----------------------
-   6) Buttons (Primary ORNG + Neutral Secondary)
+   6) Buttons
    ----------------------- */
 .btn,
 .btn-secondary{
   display: inline-flex !important;
   align-items: center;
   justify-content: center;
+
   height: 42px;
   padding: 0 16px !important;
   border-radius: 12px !important;
+
   font-weight: 600 !important;
   font-size: 14px !important;
   line-height: 1 !important;
+
   text-decoration: none !important;
-  transition: transform var(--t) var(--ease), filter var(--t) var(--ease), background var(--t) var(--ease);
+
+  transition:
+    transform var(--t) var(--ease),
+    filter var(--t) var(--ease),
+    background var(--t) var(--ease);
 }
 
+/* Primary = ORNG */
 .btn{
   background: linear-gradient(180deg, rgba(255,138,61,.26), rgba(255,138,61,.12)) !important;
   border: 1px solid rgba(255,138,61,.45) !important;
@@ -208,10 +249,11 @@ a:hover{
 .btn:hover{
   filter: brightness(1.10);
   transform: translateY(-1px);
-  color: rgba(255,255,255,.94) !important;   
+  color: rgba(255,255,255,.94) !important;
   text-decoration: none !important;
 }
 
+/* Secondary = Neutral */
 .btn-secondary{
   background: rgba(255,255,255,.03) !important;
   border: 1px solid rgba(255,255,255,.10) !important;
@@ -226,7 +268,7 @@ a:hover{
 }
 
 /* -----------------------
-   7) Professional layout blocks
+   7) Layout blocks
    ----------------------- */
 .hero,
 .cta,
@@ -236,15 +278,26 @@ a:hover{
   margin: 18px auto 0;
   border-radius: 16px;
   border: 1px solid var(--border);
+  background: var(--surface);
 }
 
+/* Corporate glass hero (less neon) */
 .hero{
   padding: 26px;
-  box-shadow: var(--shadow);
+  box-shadow: 0 10px 28px rgba(0,0,0,.45) !important;
+
   background:
-    radial-gradient(900px 500px at 10% 0%, rgba(255,138,61,.10), transparent 60%),
-    radial-gradient(700px 450px at 90% 0%, rgba(167,139,250,.10), transparent 55%),
-    var(--surface);
+    linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.02)) !important;
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Tighter hero paragraph */
+.hero p{
+  line-height: 1.55 !important;
+  font-weight: 450 !important;
+  max-width: 46ch;
 }
 
 .hero-actions{
@@ -262,31 +315,33 @@ a:hover{
 
 .cta{
   padding: 22px;
-  background: var(--surface);
   box-shadow: none;
   opacity: 0.98;
 }
 
-.cta h2{
-  margin-top: 0;
-}
+.cta h2{ margin-top: 0; }
 
 .contact-card,
 .scheduler-card{
   padding: 18px;
-  background: var(--surface);
 }
 
 /* -----------------------
    8) Footer
    ----------------------- */
 .site-footer{
-  border-top: 1px solid var(--border) !important;
-  background: rgba(9,10,11,.92) !important;
-  color: var(--muted) !important;
-  text-align: center;
+  background: var(--bg) !important;
+  border-top: 1px solid rgba(255,255,255,.08) !important;
+  box-shadow: none !important;
+
+  text-align: center !important;
   padding: 22px 12px !important;
-  margin-top: 48px;
+  margin-top: 48px !important;
+}
+
+.site-footer p{
+  margin: 10px 0 0 !important;
+  color: var(--muted) !important;
 }
 
 .footer-nav, .social-links{
@@ -321,4 +376,81 @@ a:hover{
 .small{
   color: var(--muted);
   font-size: 14px;
+}
+
+/* =========================================================
+   Mobile polish (iPhone)
+   ========================================================= */
+@media (max-width: 520px){
+  .container{
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .header-inner{
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  .top-nav{
+    gap: 6px;
+  }
+
+  .hero{
+    padding: 18px;
+  }
+
+  h1{
+    font-size: 34px;
+    line-height: 1.12;
+    letter-spacing: -0.025em;
+    font-weight: 650;
+  }
+
+  h2{
+    font-size: 22px;
+    line-height: 1.18;
+    font-weight: 650;
+  }
+
+  p, li{
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .hero-meta{
+    font-size: 12.5px;
+    line-height: 1.4;
+    opacity: 0.85;
+  }
+
+  /* Stack hero buttons cleanly */
+  .hero-actions{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-top: 14px;
+  }
+
+  .hero-actions .btn,
+  .hero-actions .btn-secondary{
+    width: 100%;
+    height: 44px;
+    padding: 0 14px !important;
+    border-radius: 14px !important;
+  }
+
+  /* Secondary less “pillowy” */
+  .btn-secondary{
+    background: rgba(255,255,255,.02) !important;
+    border: 1px solid rgba(255,255,255,.12) !important;
+  }
+}
+
+/* iOS text consistency */
+@supports (-webkit-touch-callout: none){
+  body{
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+  }
 }
