@@ -20,18 +20,31 @@ For enquiries and new engagements, schedule a short call or reach out by email.
 
 <div class="contact-grid">
 
-  <div class="scheduler-card" markdown="1">
-  <div class="small">Available Monday–Friday (excluding national holidays)</div>
+  <div class="scheduler-card contact-tile" markdown="1">
+  <div class="small">Availability</div>
 
-  <a class="btn" href="https://cal.itsbhanusharma.com" target="_blank" rel="noopener">
-    Book a time
-  </a>
+  Monday–Friday (excluding national holidays)
+
+  <div class="tile-actions">
+    <a class="btn" href="https://cal.itsbhanusharma.com" target="_blank" rel="noopener">
+      Book a time
+    </a>
   </div>
-
-  <div class="contact-card" markdown="1">
+  </div>
+  
+  <div class="contact-card contact-tile" markdown="1">
   <div class="small">Email</div>
 
-  hello[at]orng.co
+  <a class="email-link" id="emailText" href="mailto:hello@orng.co">hello@orng.co</a>
+
+  <div class="tile-actions">
+    <button class="btn-secondary copy-btn" type="button" data-copy="hello@orng.co">
+      Copy
+    </button>
+    <span class="copy-status small" aria-live="polite"></span>
   </div>
+  </div>
+
+</div>
 
 </div>
