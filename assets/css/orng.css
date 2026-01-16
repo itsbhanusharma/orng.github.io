@@ -91,7 +91,10 @@ hr{
 }
 
 /* Consistent page rhythm + alignment */
-.main-content .container > *{
+.main-content .container > :is(
+  h1, h2, h3, p, ul, ol, blockquote, pre,
+  .hero, .cta, .contact-card, .scheduler-card
+){
   max-width: 860px;
   margin-left: auto;
   margin-right: auto;
@@ -284,17 +287,16 @@ a:hover{
   background: #090A0B !important;
   border-top: 1px solid rgba(255,255,255,.08) !important;
   box-shadow: none !important;
+  text-align: center !important;
+  padding: 22px 12px !important;
+  margin-top: 48px !important;
 }
 
-.site-footer::before,
-.site-footer::after{
-  content: none !important;
-  display: none !important;
+.site-footer p{
+  margin: 10px 0 0 !important;
+  color: var(--muted) !important;
 }
 
-.site-footer *{
-  background: transparent !important;
-}
 
 .footer-nav, .social-links{
   display: flex;
