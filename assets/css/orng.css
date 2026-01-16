@@ -281,12 +281,19 @@ a:hover{
    8) Footer
    ----------------------- */
 .site-footer{
-  border-top: 1px solid var(--border) !important;
-  background: rgba(9,10,11,.92) !important;
-  color: var(--muted) !important;
-  text-align: center;
-  padding: 22px 12px !important;
-  margin-top: 48px;
+  background: #090A0B !important;
+  border-top: 1px solid rgba(255,255,255,.08) !important;
+  box-shadow: none !important;
+}
+
+.site-footer::before,
+.site-footer::after{
+  content: none !important;
+  display: none !important;
+}
+
+.site-footer *{
+  background: transparent !important;
 }
 
 .footer-nav, .social-links{
