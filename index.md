@@ -20,10 +20,13 @@ Independent technology advisory supporting modernization, resilience, and scalab
 
 </div>
 
-## Focus areas
+<h2>Focus areas</h2>
 
-- Platforms & Content Operations
-- Infrastructure & Cloud Architecture
-- Reliability, Security & Performance
-- Networking & DNS Foundations
-- Automation & Applied AI
+<ul class="focus-grid">
+  <li>Platforms & Content Operations</li>
+  <li>Infrastructure & Cloud Architecture</li>
+  <li>Reliability, Security & Performance</li>
+  <li>Networking & DNS Foundations</li>
+  <li>Automation & Applied AI</li>
+</ul>
+
