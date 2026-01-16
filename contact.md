@@ -16,7 +16,7 @@ For enquiries and new engagements, schedule a short call or reach out by email.
 
 </div>
 
-<h2 id="schedule">Schedule a call</h2>
+<h2 id="schedule">Get in touch</h2>
 
 <div class="contact-grid">
 
