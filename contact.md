@@ -26,7 +26,7 @@ For enquiries and new engagements, schedule a short call or reach out by email.
     <p>Monday–Friday (excluding national holidays)</p>
 
     <div class="tile-actions">
-      <a class="btn" href="https://bookings.itsbhanusharma.com/cal" target="_blank" rel="noopener">
+      <a class="btn" href="https://calendar.app.google/9JqpTj2cesr6NoGi8" target="_blank" rel="noopener">
         Book a time
       </a>
     </div>
